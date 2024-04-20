@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday, Flo!</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start; /* Align items near the top */
+            min-height: 100vh; /* Ensure the page fills the viewport */
+            background-color: #f0f0f0;
+        }
+        .card {
+            width: 90%; /* Adjusted to fit iPhone screen */
+            max-width: 400px; /* Maximum width */
+            height: auto; /* Auto height */
+            cursor: pointer; /* Change cursor to pointer to indicate clickable */
+            position: relative; /* Added to handle position of images */
+            margin-top: 10vh; /* Add space from the top */
+        }
+        .card img {
+            width: 100%; /* Make both images fill the container */
+            height: auto; /* Auto height */
+            position: absolute; /* Added to position images on top of each other */
+            top: 0; /* Positioned at the top of the container */
+            left: 0; /* Positioned at the left of the container */
+            transition: opacity 0.5s ease; /* Smooth transition for opacity */
+        }
+        .backside {
+            opacity: 0; /* Initially hide the backside image */
+        }
+    </style>
+</head>
+<body>
+
+<div class="card" id="card" onclick="toggleBackside()">
+    <img src="cover_image.png" alt="Cover Image">
+    <img src="birthday_card_text.png" alt="Text Image" class="backside">
+</div>
+
+<script>
+    function toggleBackside() {
+        var backside = document.querySelector('.backside');
+        backside.style.opacity = backside.style.opacity === '0' ? '1' : '0';
+    }
+</script>
+
+</body>
+</html>
